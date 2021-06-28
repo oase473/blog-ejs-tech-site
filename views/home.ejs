@@ -1,0 +1,11 @@
+
+<%- include("partials/header"); %>
+    <h1>Home</h1>
+    <p><%= firstParagraph %></p>
+<% exportedPosts.forEach(function(exportedPost){%>
+  <h1><%= exportedPost.title %></h1>
+  <p><%= exportedPost.content.substring(0,100) %>... <a href="./posts/<%= _.kebabCase(exportedPost.title) %>">Read more</a></p>
+<%});%>
+
+
+<%- include("partials/footer"); %>
